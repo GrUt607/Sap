@@ -366,7 +366,7 @@ bool Sap::mine(int i, int j)
 void Sap::print_array_2D()
 {
     const int SIZE = 30;
-    char strLetters[SIZE] = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '\0' };
+    char strLetters[SIZE] = { ' A', ' B', ' C', ' D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '\0' };
     std::wcout << L"  ";
     for (int i = 0; i < N; i++)
     {
@@ -388,7 +388,7 @@ void Sap::print_array_2D()
                 }
                 else if (Playing_field[x][y] == 0)
                 {
-                    std::wcout << L"& ";
+                    std::wcout << L"  ";
                 }
                 else
                 {
