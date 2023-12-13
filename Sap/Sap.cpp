@@ -5,6 +5,7 @@
 
 #include "Sap.h"
 #include <algorithm>
+#include <iterator>
 
  /**
   * @brief Конструктор по умолчанию.
@@ -163,12 +164,12 @@ void Sap::run()
     while (true)
     {
         std::system("cls");
-        std::wcout << L"САПЕР " << std::endl << std::endl << std::endl;
+        std::wcout << L"SAPPER " << std::endl << std::endl << std::endl;
 
-        std::wcout << L"1 - ИГРАТЬ " << std::endl;
-        std::wcout << L"2 - ПРАВИЛА ИГРЫ << САПЕР >> " << std::endl;
-        std::wcout << L"0 - ВЫХОД" << std::endl << std::endl << std::endl;
-        std::wcout << L"СДЕЛАЙТЕ ВАШ ВЫБОР:" << std::endl << std::endl;
+        std::wcout << L"1 - Play " << std::endl;
+        std::wcout << L"2 - THE RULES OF THE GAME << SAPPER >> " << std::endl;
+        std::wcout << L"0 - Exit" << std::endl << std::endl << std::endl;
+        std::wcout << L"MAKE YOUR CHOICE:" << std::endl << std::endl;
         std::cin >> choice;
         std::wcout << std::endl;
         std::cin.ignore(100, '\n');
@@ -223,16 +224,16 @@ void Sap::run()
             while (true)
             {
                 std::system("cls");
-                std::wcout << L"*******************************" << std::endl << std::endl;
-                std::wcout << L"* Один раз ошибся и ты ошибся *" << std::endl << std::endl;
-                std::wcout << L"*******************************" << std::endl;
+                std::wcout << L"************************************************" << std::endl << std::endl;
+                std::wcout << L"* I made a mistake once and you made a mistake *" << std::endl << std::endl;
+                std::wcout << L"************************************************" << std::endl;
                 std::wcout << std::endl << std::endl;
                 game.print_array_2D();
                 std::wcout << std::endl;
 
                 // запрашиваем координаты удара
                 char input_coordinate[3]{ '\0' };
-                std::wcout << L"Введите координаты удара (Пример: D3): ";
+                std::wcout << L"Enter the coordinates of the impact (Example: D3): ";
                 std::cin >> input_coordinate;
                 // переводим координаты в цифровой вид
                 if ((input_coordinate[0] >= 'A') && (input_coordinate[0] <= 'J'))
@@ -278,7 +279,7 @@ void Sap::run()
 
         default:
         {
-            std::wcout << L"Ошибка, попробуйте еще раз, нажмите кнопку <Enter>, чтобы повторить попытку" << std::endl;
+            std::wcout << L"Error, try again, press the <Enter> button to try again" << std::endl;
             break;
         }
         }
@@ -292,14 +293,14 @@ void Sap::run()
  */
 void Sap::rules()
 {
-    std::wcout << L"\tСАПЕР: ПРАВИЛА И ОБЩИЕ СВЕДЕНИЯ" << std::endl << std::endl << std::endl << std::endl;
-    std::wcout << L"\tНачните с открытия одной ячейки." << std::endl;
-    std::wcout << L"\tЧисло в ячейке показывает, сколько мин скрыто вокруг данной ячейки. Это число поможет вам понять, где находятся безопасные ячейки, а где находятся бомбы." << std::endl;
-    std::wcout << L"\tЕсли рядом с открытой ячейкой есть пустая ячейка, то она откроется автоматически." << std::endl;
-    std::wcout << L"\tЕсли вы открыли ячейку с миной, то игра проиграна." << std::endl;
-    std::wcout << L"\tЕсли в ячейке указано число, оно показывает, сколько мин скрыто в восьми ячейках вокруг данной. Это число помогает вам понять, где находятся безопасные ячейки." << std::endl;
-    std::wcout << L"\tИгра продолжается до тех пор, пока вы не откроете все незаминированные ячейки." << std::endl << std::endl << std::endl;
-    std::wcout << L"\tУдачной игры!)" << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
+    std::wcout << L"\tMINESWEEPER: RULES AND GENERAL INFORMATION" << std::endl << std::endl << std::endl << std::endl;
+    std::wcout << L"\tstart by opening one cell." << std::endl;
+    std::wcout << L"\tthe number in the cell shows how many mines are hidden around this cell. This number will help you understand where the safe cells are and where the bombs are." << std::endl;
+    std::wcout << L"\t If there is an empty cell next to an open cell, it will open automatically." << std::endl;
+    std::wcout << L"\tif you open a cell with a mine, the game is lost." << std::endl;
+    std::wcout << L"\t If a number is specified in a cell, it shows how many mines are hidden in the eight cells around the given one. This number helps you understand where the safe cells are." << std::endl;
+    std::wcout << L"\t The game continues until you open all the unlined cells." << std::endl << std::endl << std::endl;
+    std::wcout << L"\tHave a good game!)" << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
 }
 
 /**
@@ -455,12 +456,12 @@ void Sap::final(bool loser)
     if (loser)
     {
         std::wcout << L"\a" << std::endl;
-        std::wcout << L"ВЫ ПРОИГРАЛИ!(" << std::endl << std::endl;
+        std::wcout << L"YOU'VE LOST!(" << std::endl << std::endl;
     }
     else
     {
         std::wcout << L"\a" << std::endl;
-        std::wcout << L"ВЫ ВЫИГРАЛИ!)" << std::endl << std::endl;
+        std::wcout << L"YOU'VE LOST!)" << std::endl << std::endl;
     }
     std::cin.get();
     std::wcout << std::endl << std::endl;
