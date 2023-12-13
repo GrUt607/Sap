@@ -223,16 +223,16 @@ void Sap::run()
             while (true)
             {
                 std::system("cls");
-                std::wcout << L"*****************************" << std::endl << std::endl;
-                std::wcout << L"* САПЕР ОШИБАЕТЬСЯ ОДИН РАЗ *" << std::endl << std::endl;
-                std::wcout << L"*****************************" << std::endl;
+                std::wcout << L"*******************************" << std::endl << std::endl;
+                std::wcout << L"* Один раз ошибся и ты ошибся *" << std::endl << std::endl;
+                std::wcout << L"*******************************" << std::endl;
                 std::wcout << std::endl << std::endl;
                 game.print_array_2D();
                 std::wcout << std::endl;
 
                 // запрашиваем координаты удара
                 char input_coordinate[3]{ '\0' };
-                std::wcout << L"Введите координаты удара (E7): ";
+                std::wcout << L"Введите координаты удара (Пример: D3): ";
                 std::cin >> input_coordinate;
                 // переводим координаты в цифровой вид
                 if ((input_coordinate[0] >= 'A') && (input_coordinate[0] <= 'J'))
@@ -292,7 +292,7 @@ void Sap::run()
  */
 void Sap::rules()
 {
-    std::wcout << L"\t\t\t\t\t\t\t\tСАПЕР: ПРАВИЛА И ОБЩИЕ СВЕДЕНИЯ" << std::endl << std::endl << std::endl << std::endl;
+    std::wcout << L"\tСАПЕР: ПРАВИЛА И ОБЩИЕ СВЕДЕНИЯ" << std::endl << std::endl << std::endl << std::endl;
     std::wcout << L"\tНачните с открытия одной ячейки." << std::endl;
     std::wcout << L"\tЧисло в ячейке показывает, сколько мин скрыто вокруг данной ячейки. Это число поможет вам понять, где находятся безопасные ячейки, а где находятся бомбы." << std::endl;
     std::wcout << L"\tЕсли рядом с открытой ячейкой есть пустая ячейка, то она откроется автоматически." << std::endl;
@@ -365,8 +365,7 @@ bool Sap::mine(int i, int j)
  */
 void Sap::print_array_2D()
 {
-    const int SIZE = 30;
-    char strLetters[SIZE] = { ' A', ' B', ' C', ' D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '\0' };
+    const std::string strLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     std::wcout << L"  ";
     for (int i = 0; i < N; i++)
     {
