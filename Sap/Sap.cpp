@@ -155,8 +155,8 @@ void Sap::deleteBoolArr()
  */
 void Sap::run()
 {
-    std::srand(static_cast<unsigned int>(std::time(nullptr)));
-    std::locale::global(std::locale("ru_RU.UTF-8"));  
+    //std::srand(static_cast<unsigned int>(std::time(nullptr)));
+    //std::locale::global(std::locale("ru_RU.UTF-8"));  
 
     Sap game;
 
@@ -294,12 +294,12 @@ void Sap::run()
 void Sap::rules()
 {
     std::wcout << L"\tMINESWEEPER: RULES AND GENERAL INFORMATION" << std::endl << std::endl << std::endl << std::endl;
-    std::wcout << L"\tstart by opening one cell." << std::endl;
-    std::wcout << L"\tthe number in the cell shows how many mines are hidden around this cell. This number will help you understand where the safe cells are and where the bombs are." << std::endl;
-    std::wcout << L"\t If there is an empty cell next to an open cell, it will open automatically." << std::endl;
+    std::wcout << L"\tStart by opening one cell." << std::endl;
+    std::wcout << L"\tThe number in the cell shows how many mines are hidden around this cell. This number will help you understand where the safe cells are and where the bombs are." << std::endl;
+    std::wcout << L"\tIf there is an empty cell next to an open cell, it will open automatically." << std::endl;
     std::wcout << L"\tif you open a cell with a mine, the game is lost." << std::endl;
-    std::wcout << L"\t If a number is specified in a cell, it shows how many mines are hidden in the eight cells around the given one. This number helps you understand where the safe cells are." << std::endl;
-    std::wcout << L"\t The game continues until you open all the unlined cells." << std::endl << std::endl << std::endl;
+    std::wcout << L"\tIf a number is specified in a cell, it shows how many mines are hidden in the eight cells around the given one. This number helps you understand where the safe cells are." << std::endl;
+    std::wcout << L"\tThe game continues until you open all the unlined cells." << std::endl << std::endl << std::endl;
     std::wcout << L"\tHave a good game!)" << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
 }
 
