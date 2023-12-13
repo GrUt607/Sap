@@ -16,7 +16,7 @@
 int main()
 {
     std::srand(static_cast<unsigned int>(std::time(nullptr)));
-    // std::locale::global(std::locale("ru_RU.UTF-8"));  // Uncomment if needed
+    std::locale::global(std::locale("ru_RU.UTF-8"));  
 
     Sap game;
     game.run();
