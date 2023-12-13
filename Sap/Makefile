@@ -1,30 +1,19 @@
-CXX = g++  # Используем компилятор g++
-CXXFLAGS = -std=c++11 -Wall  # Флаги компилятора
-
-# Файлы исходного кода
+CXX = g++
+CXXFLAGS = -std=c++11 -Wall
 SRCS = main.cpp Sap.cpp
-
-# Замените .cpp на .o в списке файлов исходного кода
 OBJS = $(SRCS:.cpp=.o)
-
-# Имя исполняемого файла
 TARGET = sap_game
 
-# Правило по умолчанию: сборка исполняемого файла
 all: $(TARGET)
 
-# Правило линковки
 $(TARGET): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $@ $(OBJS)
 
-# Правило компиляции для каждого .cpp файла
-%.o: %.cpp
+%.o: %.cpp Sap.h
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Чистка: удаление объектных файлов и исполняемого файла
 clean:
 	rm -f $(OBJS) $(TARGET)
 
-# Запуск игры после компиляции
 run: $(TARGET)
 	./$(TARGET)
